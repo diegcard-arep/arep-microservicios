@@ -12,9 +12,42 @@
 
 ---
 
+## 📋 Tabla de Contenidos
+
+- [Descripción del Proyecto](#-descripción-del-proyecto)
+- [Autores](#-autores)
+- [Inicio Rápido (60 segundos)](#-inicio-rápido-60-segundos)
+- [Características Principales](#-características-principales)
+- [Lo Mejor de Este Proyecto](#-lo-mejor-de-este-proyecto)
+- [Arquitectura del Sistema](#️-arquitectura-del-sistema)
+- [Capturas de Pantalla](#-capturas-de-pantalla)
+- [Guía de Inicio Rápido](#-guía-de-inicio-rápido)
+- [Configuración](#-configuración)
+- [Estructura del Proyecto](#-estructura-del-proyecto)
+- [Seguridad](#-seguridad)
+- [Documentación Detallada por Servicio](#-documentación-detallada-por-servicio)
+- [Testing](#-testing)
+- [Despliegue en AWS](#-despliegue-en-aws)
+- [Video Demostración](#-video-demostración)
+- [Checklist de Requerimientos](#-checklist-de-requerimientos)
+- [Stack Tecnológico](#-stack-tecnológico)
+- [Preguntas Frecuentes](#-preguntas-frecuentes)
+- [Referencias](#-referencias-y-documentación)
+- [Licencia](#-licencia)
+
+---
+
 ## 📋 Descripción del Proyecto
 
 Este proyecto implementa una red social tipo Twitter siguiendo una arquitectura moderna de **microservicios**, desarrollada como parte del curso **AREP (Arquitecturas Empresariales)** de la **Escuela Colombiana de Ingeniería Julio Garavito**.
+
+### ¿Qué es este proyecto?
+
+Una red social tipo Twitter implementada con:
+- **Backend:** 3 microservicios independientes en Java Spring Boot
+- **Frontend:** Aplicación web moderna en React
+- **Cloud:** Infraestructura completamente serverless en AWS (Lambda, API Gateway, Cognito, S3)
+- **Base de datos:** MongoDB Atlas
 
 ### Enunciado del Proyecto
 
@@ -28,17 +61,64 @@ El proyecto fue construido siguiendo los siguientes requisitos:
 6. ✅ Desplegar los servicios en AWS Lambda
 7. ✅ Entregar código en GitHub, reporte de arquitectura, pruebas, y demostración en video
 
-### 👥 Autores
+---
 
-- **Diego Cárdenas** - Escuela Colombiana de Ingeniería Julio Garavito
-- **Allison Valderrama** - Escuela Colombiana de Ingeniería Julio Garavito
-- **Profesor Asesor:** Luis Daniel Benavides
+## 👥 Autores
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/diegcard">
+        <img src="https://github.com/diegcard.png" width="100px;" alt="Diego Cárdenas"/><br />
+        <sub><b>Diego Cárdenas</b></sub>
+      </a><br />
+      <sub>Backend & Cloud Infrastructure</sub>
+    </td>
+    <td align="center">
+      <a href="https://github.com/LIZVALMU">
+        <img src="https://github.com/LIZVALMU.png" width="100px;" alt="Alison Valderrama"/><br />
+        <sub><b>Alison Valderrama</b></sub>
+      </a><br />
+      <sub>Frontend & UI/UX</sub>
+    </td>
+  </tr>
+</table>
+
+**Institución:** Escuela Colombiana de Ingeniería Julio Garavito  
+**Materia:** AREP - Arquitecturas Empresariales  
+**Profesor Asesor:** Luis Daniel Benavides  
+**Fecha:** Noviembre 2025
+
+---
+
+## ⚡ Inicio Rápido (60 segundos)
+
+### ¿Por dónde empiezo?
+
+**Si eres un evaluador o profesor:**
+1. ✅ Lee este README 
+2. ✅ Mira el [video demostrativo](https://youtu.be/s0Ic2EwLqkU)
+4. ✅ Explora los [screenshots](#-capturas-de-pantalla)
+
+**Si eres desarrollador:**
+1. ✅ Entiende la [arquitectura](#️-arquitectura-del-sistema)
+2. ✅ Ve a la documentación de tu área:
+   - 👥 Backend Users → [user-service/README.md](./user-service/README.md)
+   - 📝 Backend Posts → [post-service/README.md](./post-service/README.md)
+   - 🌊 Backend Timeline → [stream-service/README.md](./stream-service/README.md)
+   - ⚛️ Frontend → [frontend/README.md](./frontend/README.md)
+3. ✅ Sigue la [Guía de Instalación Local](#-guía-de-inicio-rápido)
+
+**Si eres DevOps/Cloud:**
+1. ✅ Revisa la [arquitectura en AWS](#️-arquitectura-del-sistema)
+3. ✅ Revisa los templates en `aws-config-templates/`
 
 ---
 
 ## ✨ Características Principales
 
 ### Funcionalidad de Usuario
+
 - ✅ Registro de nuevos usuarios
 - ✅ Inicio de sesión con AWS Cognito
 - ✅ Autenticación vía OAuth 2.0
@@ -46,6 +126,7 @@ El proyecto fue construido siguiendo los siguientes requisitos:
 - ✅ Sistema de seguir/dejar de seguir usuarios
 
 ### Funcionalidad de Posts
+
 - ✅ Crear posts de máximo 140 caracteres
 - ✅ Visualizar posts individuales
 - ✅ Sistema de likes
@@ -53,18 +134,54 @@ El proyecto fue construido siguiendo los siguientes requisitos:
 - ✅ Historial de posts por usuario
 
 ### Funcionalidad de Timeline
+
 - ✅ Timeline global (todos los posts en orden cronológico inverso)
 - ✅ Timeline personal (posts de usuarios seguidos)
 - ✅ Búsqueda y filtrado
 - ✅ Carga eficiente de datos
 
 ### Infraestructura Técnica
+
 - ✅ Arquitectura serverless completamente en AWS
 - ✅ Microservicios independientes y escalables
 - ✅ Base de datos NoSQL (MongoDB Atlas)
 - ✅ Interfaz moderna con React 18
 - ✅ Autenticación segura con JWT
 - ✅ Desplegado en S3 + CloudFront
+
+---
+
+## 🌟 Lo Mejor de Este Proyecto
+
+### ✨ Microservicios Independientes
+
+- **User Service** - Gestión completa de usuarios y autenticación
+- **Post Service** - Creación de posts, comentarios y sistema de likes
+- **Stream Service** - Timeline global, búsqueda y trending topics
+
+Cada servicio es completamente independiente, escalable y desplegable por separado.
+
+### 🔐 Seguridad Moderna
+
+- **JWT Tokens** - Autenticación basada en tokens seguros
+- **AWS Cognito OAuth 2.0** - Proveedores de identidad configurables
+- **Spring Security** - Framework de seguridad enterprise-grade
+- **CORS Configurado** - Protección contra ataques cross-origin
+
+### ☁️ Infraestructura Cloud Escalable
+
+- **AWS Lambda** - Funciones serverless con auto-scaling
+- **API Gateway** - Endpoints REST profesionales y seguros
+- **CloudFront** - CDN global para baja latencia
+- **S3** - Hosting estático de alta disponibilidad
+- **MongoDB Atlas** - Base de datos NoSQL distribuida
+
+### ⚡ Stack Tecnológico Moderno
+
+- **Java 17 + Spring Boot 3.2.0** - Backend robusto y profesional
+- **React 18.2.0 + Vite** - Frontend ultra-rápido y reactivo
+- **Node.js + Express** - Proxy OAuth y servidor de desarrollo
+- **Docker-ready** - Contenedores listos para producción
 
 ---
 
@@ -718,35 +835,6 @@ El video de demostración muestra:
 | Reporte de Arquitectura | ✅ Completado | [ARQUITECTURA_DIAGRAMA.md](./ARQUITECTURA_DIAGRAMA.md) |
 | Pruebas Documentadas | ✅ Completado | [aws-config-templates/lambda-test-events/](./aws-config-templates/lambda-test-events/) |
 | Video Funcionando | ✅ Completado | [Ver en YouTube](https://youtu.be/s0Ic2EwLqkU) |
-
----
-
-## 🛠️ Troubleshooting
-
-### Error: "MongoDB Connection Failed"
-```
-Solución: Verificar que MONGO_URI esté correcta en variables de entorno
-Verificar que IP está whitelisted en MongoDB Atlas
-```
-
-### Error: "Invalid JWT Token"
-```
-Solución: Asegurar que token de Cognito no ha expirado
-Verificar que public key de Cognito está configurada correctamente
-```
-
-### Error: "CORS Error"
-```
-Solución: Verificar configuración CORS en API Gateway
-Verificar que orígenes permitidos incluyen el dominio del frontend
-```
-
-### Lambda Timeout
-```
-Solución: Aumentar timeout de Lambda a 30+ segundos
-Optimizar consultas a MongoDB
-Verificar que no hay operaciones síncronas bloqueantes
-```
 
 ---
 
