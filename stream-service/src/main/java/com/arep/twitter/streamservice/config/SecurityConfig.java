@@ -29,7 +29,7 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable())
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(authz -> authz
-                .requestMatchers("/api/timeline/health").permitAll()
+                .requestMatchers("/api/health", "/api/health/**").permitAll() // Health check sin autenticación
                 .anyRequest().authenticated()
             )
             .oauth2ResourceServer(oauth2 -> oauth2

@@ -1,0 +1,39 @@
+{
+  "resource": "/user/api/users/{id}",
+  "path": "/user/api/users/test-user-id-123",
+  "httpMethod": "PUT",
+  "headers": {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+    "Authorization": "Bearer eyJraWQiOiJtest-token-aqui"
+  },
+  "multiValueHeaders": null,
+  "queryStringParameters": null,
+  "multiValueQueryStringParameters": null,
+  "pathParameters": {
+    "id": "test-user-id-123"
+  },
+  "stageVariables": null,
+  "requestContext": {
+    "resourceId": "123456",
+    "resourcePath": "/user/api/users/{id}",
+    "httpMethod": "PUT",
+    "extendedRequestId": "test-request-id",
+    "requestTime": "04/Nov/2025:00:00:00 +0000",
+    "path": "/prod/user/api/users/test-user-id-123",
+    "accountId": "123456789012",
+    "protocol": "HTTP/1.1",
+    "stage": "prod",
+    "domainPrefix": "testprefix",
+    "requestTimeEpoch": 1730678400000,
+    "requestId": "test-request-id",
+    "identity": {
+      "sourceIp": "127.0.0.1",
+      "userAgent": "Custom User Agent String"
+    },
+    "domainName": "testdomainname",
+    "apiId": "testApiId"
+  },
+  "body": "{\"username\":\"testuser\",\"email\":\"test@example.com\",\"bio\":\"Test bio\"}",
+  "isBase64Encoded": false
+}

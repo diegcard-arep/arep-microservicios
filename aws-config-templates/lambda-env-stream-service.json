@@ -1,0 +1,13 @@
+{
+  "Comment": "Variables de entorno para twitter-stream-service Lambda",
+  "Variables": {
+    "SPRING_PROFILES_ACTIVE": "lambda",
+    "MONGODB_URI": "mongodb+srv://diegocardenasb_db_user:rPU4UBBESGQi4AQf@arep-twiter.dc0q3wo.mongodb.net/twitter_db?retryWrites=true&w=majority&appName=arep-twiter",
+    "MONGODB_DATABASE": "twitter_db",
+    "COGNITO_ISSUER_URI": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_3UE2M9esT",
+    "COGNITO_JWK_URI": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_3UE2M9esT/.well-known/jwks.json",
+    "ALLOWED_ORIGINS": "https://[TU-CLOUDFRONT-URL].cloudfront.net,http://localhost:3000,http://localhost:5173",
+    "USER_SERVICE_URL": "https://[TU-API-GATEWAY-URL]/prod/user",
+    "POST_SERVICE_URL": "https://[TU-API-GATEWAY-URL]/prod/post"
+  }
+}

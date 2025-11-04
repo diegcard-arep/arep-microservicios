@@ -137,7 +137,7 @@ function getPathFromURL(urlString) {
 // API Routes
 
 // Auth status
-app.get('/api/auth/status', checkAuth, async (req, res) => {
+app.get('/api/auth/status', checkAAuth, async (req, res) => {
     try {
         if (!req.isAuthenticated) {
             return res.json({
